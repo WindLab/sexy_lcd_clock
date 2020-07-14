@@ -30,7 +30,7 @@ var minutesChanged = function(newDate, oldDate) {
 var soundTime = function (date) {
   minutes = date.getMinutes();
 
-  var minuteIsCorrect = [0, 30].includes(minutes)
+  var minuteIsCorrect = [0].includes(minutes)
   var secondIsCorrect = date.getSeconds() < 2
 
   if (minuteIsCorrect && secondIsCorrect) { return true }
