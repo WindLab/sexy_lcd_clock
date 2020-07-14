@@ -28,13 +28,6 @@ var minutesChanged = function(newDate, oldDate) {
 }
 
 var soundTime = function (date) {
-  minutes = date.getMinutes();
-
-  var minuteIsCorrect = [0].includes(minutes)
-  var secondIsCorrect = date.getSeconds() < 2
-
-  if (minuteIsCorrect && secondIsCorrect) { return true }
-
   return false
 }
 
@@ -43,11 +36,6 @@ var tick = function() {
 
   if (minutesChanged(date, window.sexyLCDClockDate)) {
     counter.innerHTML = formatTime(date)
-
-    if (soundTime(date)) {
-      var sound = new Audio(browser.extension.getURL('assets/sound.wav'))
-      sound.play()
-    }
 
     window.sexyLCDClockDate = date
   }
